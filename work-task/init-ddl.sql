@@ -48,4 +48,19 @@ create index idx_developer on t_work_task_detail(developer);
 create index idx_update_time on t_work_task_detail(update_time);
 
 
+drop table if exists t_task_issue;
+create table t_task_issue(
+    issue_id int not null auto_increment  comment 'Issue Id' ,
+    task_id varchar(50) not null   comment 'Task ID' ,
+    task_name varchar(100) not null   comment 'Task Name' ,
+    issue_type varchar(30)    comment 'Issue Type' ,
+    issue_description varchar(900)    comment 'Issue Description' ,
+    issue_introspection varchar(900)    comment 'Issue Introspection' ,
+    create_time datetime not null   comment 'Create Time' ,
+    update_time datetime not null   comment 'Update Time' ,
+    primary key (issue_id)
+) auto_increment= 3000100010, comment = 'Task Issue';
 
+
+create index idx_task_name on t_task_issue(task_name);
+create index idx_update_time on t_task_issue(update_time);
