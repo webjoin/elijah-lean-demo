@@ -64,3 +64,8 @@ create table t_task_issue(
 
 create index idx_task_name on t_task_issue(task_name);
 create index idx_update_time on t_task_issue(update_time);
+
+
+
+alter table t_work_task
+	add release_time datetime null comment 'Release Time' after task_status;
